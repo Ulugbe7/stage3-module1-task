@@ -1,6 +1,7 @@
 package com.mjc.school;
 
-import com.mjc.school.dto.NewsRequestDto;
+import com.mjc.school.controller.NewsController;
+import com.mjc.school.service.dto.NewsRequestDto;
 
 import java.util.Scanner;
 

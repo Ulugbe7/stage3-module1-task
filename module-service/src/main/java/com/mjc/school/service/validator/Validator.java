@@ -1,9 +1,9 @@
-package com.mjc.school.validator;
+package com.mjc.school.service.validator;
 
-import com.mjc.school.dto.NewsRequestDto;
-import com.mjc.school.exceptions.ValidatorException;
+import com.mjc.school.service.dto.NewsRequestDto;
+import com.mjc.school.service.exceptions.ValidatorException;
 
-import static com.mjc.school.exceptions.ExceptionConstants.*;
+import static com.mjc.school.service.exceptions.ExceptionConstants.*;
 
 public class Validator {
 

@@ -1,9 +1,9 @@
-package com.mjc.school;
+package com.mjc.school.controller;
 
 
-import com.mjc.school.dto.NewsRequestDto;
-import com.mjc.school.dto.NewsResponseDto;
-import com.mjc.school.service.NewsService;
+import com.mjc.school.service.dto.NewsRequestDto;
+import com.mjc.school.service.dto.NewsResponseDto;
+import com.mjc.school.service.impl.NewsService;
 
 import java.util.List;
 

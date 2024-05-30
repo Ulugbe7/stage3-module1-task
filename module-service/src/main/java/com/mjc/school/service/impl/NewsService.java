@@ -1,11 +1,11 @@
-package com.mjc.school.service;
+package com.mjc.school.service.impl;
 
 import com.mjc.school.repository.model.NewsModel;
-import com.mjc.school.dto.NewsRequestDto;
-import com.mjc.school.dto.NewsResponseDto;
-import com.mjc.school.mapper.NewsMapper;
+import com.mjc.school.service.dto.NewsRequestDto;
+import com.mjc.school.service.dto.NewsResponseDto;
+import com.mjc.school.service.mapper.NewsMapper;
 import com.mjc.school.repository.impl.NewsRepository;
-import com.mjc.school.validator.Validator;
+import com.mjc.school.service.validator.Validator;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
