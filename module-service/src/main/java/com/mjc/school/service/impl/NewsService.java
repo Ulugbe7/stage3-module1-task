@@ -15,7 +15,7 @@ public class NewsService {
 
     private final NewsRepository newsRepository = NewsRepository.getInstance();
 
-    private Validator validator = new Validator();
+    private Validator newValidator = new Validator();
 
     public NewsService() {
     }
