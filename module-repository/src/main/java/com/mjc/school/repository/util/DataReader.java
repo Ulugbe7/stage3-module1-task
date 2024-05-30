@@ -1,5 +1,6 @@
 package com.mjc.school.repository.util;
 
+import io.github.pixee.security.BoundedLineReader;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -14,7 +15,7 @@ public class DataReader {
         try (BufferedReader br = new BufferedReader(new InputStreamReader(
                 Thread.currentThread().getContextClassLoader().getResourceAsStream(fileName), StandardCharsets.UTF_8))) {
             String line;
-            while ((line = br.readLine()) != null)
+            while ((line = BoundedLineReader.readLine(br, 5_000_000)) != null)
                 data.add(line);
         } catch (IOException e) {
             throw new RuntimeException(e + "Exception while reading from " + fileName);
