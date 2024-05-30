@@ -15,10 +15,12 @@ public class NewsService {
 
     private final NewsRepository newsRepository = NewsRepository.getInstance();
 
+    private Validator validator = new Validator();
+
     public NewsService() {
     }
 
-    public List<NewsResponseDto> getAllNews() {
+    public List<NewsResponseDto> readAll() {
         return NewsMapper.INSTANCE.newsListToDtoList(newsRepository.readAll());
     }
 

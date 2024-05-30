@@ -30,7 +30,7 @@ public class Main {
                 switch (operationNumber) {
                     case 1 -> {
                         System.out.println("All news");
-                        controller.getAllNews().forEach(System.out::println);
+                        controller.readAll().forEach(System.out::println);
                     }
                     case 2 -> {
                         scanner = new Scanner(System.in);
@@ -38,7 +38,7 @@ public class Main {
                         int id;
                         if (scanner.hasNextInt()) {
                             id = scanner.nextInt();
-                            System.out.println(controller.getById(id));
+                            System.out.println(controller.readById(id));
                         } else {
                             throw new RuntimeException("INT_VALUE_OUT_OF_RANGE");
                         }

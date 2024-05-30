@@ -14,11 +14,11 @@ public class NewsController {
     public NewsController() {
     }
 
-    public List<NewsResponseDto> getAllNews() {
-        return newsService.getAllNews();
+    public List<NewsResponseDto> readAll() {
+        return newsService.readAll();
     }
 
-    public NewsResponseDto getById(long id) {
+    public NewsResponseDto readById(long id) {
         return newsService.readById(id);
     }
 
