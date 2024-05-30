@@ -19,13 +19,13 @@ public class NewsService {
     }
 
     public List<NewsResponseDto> getAllNews() {
-        return NewsMapper.INSTANCE.newsListToDtoList(newsRepository.getAll());
+        return NewsMapper.INSTANCE.newsListToDtoList(newsRepository.readAll());
     }
 
     public NewsResponseDto readById(Long id) {
         Validator.validateNewsId(id);
         Validator.validateNewsId(id);
-        return NewsMapper.INSTANCE.newsToDto(newsRepository.getById(id));
+        return NewsMapper.INSTANCE.newsToDto(newsRepository.readBy(id));
     }
 
     public NewsResponseDto create(NewsRequestDto news) {

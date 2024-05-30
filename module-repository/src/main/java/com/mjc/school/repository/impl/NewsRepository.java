@@ -7,22 +7,25 @@ import java.util.List;
 
 public class NewsRepository {
 
+    private final DataSource dataSource;
+
     private static final NewsRepository instance = new NewsRepository();
     private final List<News> newsList;
 
-    private NewsRepository() {
-        this.newsList = DataSource.getInstance().readNews();
+    public NewsRepository() {
+        dataSource = DataSource.getInstance();
+        this.newsList = dataSource.readNews();
     }
 
     public static NewsRepository getInstance() {
         return instance;
     }
 
-    public List<News> getAll() {
+    public List<News> readAll() {
         return this.newsList;
     }
 
-    public News getById(Long id) {
+    public News readBy(Long id) {
         for (News news : newsList) {
             if (news.getId() == id) {
                 return news;
