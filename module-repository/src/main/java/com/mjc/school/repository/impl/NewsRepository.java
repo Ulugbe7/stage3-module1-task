@@ -1,6 +1,6 @@
 package com.mjc.school.repository.impl;
 
-import com.mjc.school.repository.model.News;
+import com.mjc.school.repository.model.NewsModel;
 import com.mjc.school.repository.source.DataSource;
 
 import java.util.List;
@@ -10,7 +10,7 @@ public class NewsRepository {
     private final DataSource dataSource;
 
     private static final NewsRepository instance = new NewsRepository();
-    private final List<News> newsList;
+    private final List<NewsModel> newsList;
 
     public NewsRepository() {
         dataSource = DataSource.getInstance();
@@ -21,12 +21,12 @@ public class NewsRepository {
         return instance;
     }
 
-    public List<News> readAll() {
+    public List<NewsModel> readAll() {
         return this.newsList;
     }
 
-    public News readBy(Long id) {
-        for (News news : newsList) {
+    public NewsModel readBy(Long id) {
+        for (NewsModel news : newsList) {
             if (news.getId() == id) {
                 return news;
             }
@@ -34,14 +34,14 @@ public class NewsRepository {
         return null;
     }
 
-    public News create(News news) {
+    public NewsModel create(NewsModel news) {
         newsList.add(news);
         return news;
     }
 
-    public News update(News news) {
-        News tmp = null;
-        for (News inst : newsList) {
+    public NewsModel update(NewsModel news) {
+        NewsModel tmp = null;
+        for (NewsModel inst : newsList) {
             if (inst.getId() == news.getId()) {
                 tmp = inst;
             }
@@ -67,7 +67,7 @@ public class NewsRepository {
     }
 
     public Boolean ifIdExist(long id) {
-        for (News news : newsList) {
+        for (NewsModel news : newsList) {
             if (news.getId() == id) {
                 return true;
             }

@@ -2,7 +2,7 @@ package com.mjc.school.repository.model;
 
 import java.time.LocalDateTime;
 
-public class News {
+public class NewsModel {
     private static long autoId = 1;
 
     private final Long id;
@@ -12,7 +12,7 @@ public class News {
     private LocalDateTime lastUpdateDate;
     private Long authorId;
 
-    public News(String title, String content, LocalDateTime createDate, LocalDateTime lastUpdateDate, Long authorId) {
+    public NewsModel(String title, String content, LocalDateTime createDate, LocalDateTime lastUpdateDate, Long authorId) {
         this.id = autoId++;
         this.title = title;
         this.content = content;

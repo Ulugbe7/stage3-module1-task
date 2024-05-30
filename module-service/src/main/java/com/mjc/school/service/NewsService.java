@@ -1,6 +1,6 @@
 package com.mjc.school.service;
 
-import com.mjc.school.repository.model.News;
+import com.mjc.school.repository.model.NewsModel;
 import com.mjc.school.dto.NewsRequestDto;
 import com.mjc.school.dto.NewsResponseDto;
 import com.mjc.school.mapper.NewsMapper;
@@ -30,7 +30,7 @@ public class NewsService {
 
     public NewsResponseDto create(NewsRequestDto news) {
         Validator.validateDtoRequest(news);
-        News model = NewsMapper.INSTANCE.dtoToNews(news);
+        NewsModel model = NewsMapper.INSTANCE.dtoToNews(news);
         model.setCreateDate(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS));
         model.setLastUpdateDate(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS));
         return NewsMapper.INSTANCE.newsToDto(newsRepository.create(model));
@@ -38,7 +38,7 @@ public class NewsService {
 
     public NewsResponseDto update(NewsRequestDto news) {
         Validator.validateDtoRequest(news);
-        News model = NewsMapper.INSTANCE.dtoToNews(news);
+        NewsModel model = NewsMapper.INSTANCE.dtoToNews(news);
         model.setLastUpdateDate(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS));
         return NewsMapper.INSTANCE.newsToDto(newsRepository.update(model));
     }

@@ -1,7 +1,7 @@
 package com.mjc.school.repository.source;
 
-import com.mjc.school.repository.model.Author;
-import com.mjc.school.repository.model.News;
+import com.mjc.school.repository.model.AuthorModel;
+import com.mjc.school.repository.model.NewsModel;
 import com.mjc.school.repository.util.DataReader;
 
 import java.security.SecureRandom;
@@ -27,26 +27,26 @@ public class DataSource {
 
     }
 
-    public List<Author> readAuthors() {
-        List<Author> authorsList = new LinkedList<>();
+    public List<AuthorModel> readAuthors() {
+        List<AuthorModel> authorsList = new LinkedList<>();
         List<String> authorsLines = DataReader.read(AUTHORS_FILE_NAME);
         for (String author : authorsLines) {
-            authorsList.add(new Author(author));
+            authorsList.add(new AuthorModel(author));
         }
         return authorsList;
     }
 
-    public List<News> readNews() {
-        List<News> newsList = new LinkedList<>();
+    public List<NewsModel> readNews() {
+        List<NewsModel> newsList = new LinkedList<>();
 
-        List<Author> authorsList = readAuthors();
+        List<AuthorModel> authorsList = readAuthors();
         List<String> titlesLines = DataReader.read(TITLES_FILE_NAME);
         List<String> contentLines = DataReader.read(CONTENT_FILE_NAME);
 
 
         Random random = new SecureRandom();
         for (long i = 1; i <= 20; i++) {
-            newsList.add(new News(
+            newsList.add(new NewsModel(
                     titlesLines.get(random.nextInt(titlesLines.size())),
                     contentLines.get(random.nextInt(contentLines.size())),
                     LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS), LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS),

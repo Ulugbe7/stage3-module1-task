@@ -1,6 +1,6 @@
 package com.mjc.school.mapper;
 
-import com.mjc.school.repository.model.News;
+import com.mjc.school.repository.model.NewsModel;
 import com.mjc.school.dto.NewsRequestDto;
 import com.mjc.school.dto.NewsResponseDto;
 import org.mapstruct.Mapper;
@@ -15,10 +15,10 @@ public interface NewsMapper {
 
     NewsMapper INSTANCE = Mappers.getMapper(NewsMapper.class);
 
-    List<NewsResponseDto> newsListToDtoList(List<News> newsLIst);
+    List<NewsResponseDto> newsListToDtoList(List<NewsModel> newsLIst);
 
-    NewsResponseDto newsToDto(News news);
+    NewsResponseDto newsToDto(NewsModel news);
 
     @Mappings(value = {@Mapping(target = "createDate", ignore = true), @Mapping(target = "lastUpdateDate", ignore = true)})
-    News dtoToNews(NewsRequestDto newsRequest);
+    NewsModel dtoToNews(NewsRequestDto newsRequest);
 }

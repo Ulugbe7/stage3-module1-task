@@ -1,12 +1,12 @@
 package com.mjc.school.repository.model;
 
-public class Author {
+public class AuthorModel {
     private static Long autoId = 1L;
 
     private final Long id;
     private String name;
 
-    public Author(String name) {
+    public AuthorModel(String name) {
         this.id = autoId++;
         this.name = name;
     }
