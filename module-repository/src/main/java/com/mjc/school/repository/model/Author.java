@@ -1,4 +1,4 @@
-package com.mjc.school.data.model;
+package com.mjc.school.repository.model;
 
 public class Author {
     private static Long autoId = 1L;

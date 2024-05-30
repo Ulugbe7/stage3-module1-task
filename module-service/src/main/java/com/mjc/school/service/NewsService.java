@@ -1,10 +1,10 @@
 package com.mjc.school.service;
 
-import com.mjc.school.data.model.News;
+import com.mjc.school.repository.model.News;
 import com.mjc.school.dto.NewsRequestDto;
 import com.mjc.school.dto.NewsResponseDto;
 import com.mjc.school.mapper.NewsMapper;
-import com.mjc.school.repository.NewsRepository;
+import com.mjc.school.repository.impl.NewsRepository;
 import com.mjc.school.validator.Validator;
 
 import java.time.LocalDateTime;

@@ -1,8 +1,8 @@
-package com.mjc.school.data.source;
+package com.mjc.school.repository.source;
 
-import com.mjc.school.data.model.Author;
-import com.mjc.school.data.model.News;
-import com.mjc.school.util.DataReader;
+import com.mjc.school.repository.model.Author;
+import com.mjc.school.repository.model.News;
+import com.mjc.school.repository.util.DataReader;
 
 import java.security.SecureRandom;
 import java.time.LocalDateTime;

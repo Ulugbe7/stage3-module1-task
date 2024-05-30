@@ -1,4 +1,4 @@
-package com.mjc.school.util;
+package com.mjc.school.repository.util;
 
 import java.io.BufferedReader;
 import java.io.IOException;
